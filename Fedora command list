@@ -1,0 +1,4 @@
+sudo dnf install
+sudo dnf check-update
+
+htop - утилита для мониторинга процессов
