@@ -1,3 +1,5 @@
+
+УСТАНОВКА ПАКЕТОВ
 sudo dnf install
 sudo dnf check-update
 
