@@ -109,11 +109,13 @@ def has_33(numlist):
     for val in numlist:
         if val == 3:
             return_list.append(val)
-    if return_list[0] == 3 and return_list[0] == 3:
+    if return_list[0] == 3 and return_list[1] == 3:
         return True
-    else:return False
-
-print(has_33([3, 0, 0, 3]))
+    else:
+        return False
+print('this is has 33 func:')
+print(has_33([3, 0, 123, 1, 3]))
+print('\n')
 
 #def has_33(nums):
     #for i in range(0, len(nums) - 1):
@@ -164,5 +166,8 @@ SUMMER OF '69: Return the sum of the numbers in the array, except ignore section
 extending to the next 9 (every 6 will be followed by at least one 9). Return 0 for no numbers.
 '''
 
-:
 def summer_69(arr):
+    summer_69_numbers = []
+    
+    sum(summer_69_numbers)
+    pass
