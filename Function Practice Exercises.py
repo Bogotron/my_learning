@@ -166,8 +166,25 @@ SUMMER OF '69: Return the sum of the numbers in the array, except ignore section
 extending to the next 9 (every 6 will be followed by at least one 9). Return 0 for no numbers.
 '''
 
-def summer_69(arr):
+def summer_69(*args):
     summer_69_numbers = []
-    
-    sum(summer_69_numbers)
-    pass
+    stopper = True
+    for val in args:
+        while stopper == True:
+            if val != 6:
+                summer_69_numbers.append(val)
+                break
+            else:
+                stopper = False
+        while stopper == False:
+            if val != 9:
+                stopper = False
+                break
+            else:
+                stopper = True
+                break
+
+    return sum(summer_69_numbers)
+
+print('Summer 69 func')
+print (summer_69(4, 5, 6, 7, 8, 9))
