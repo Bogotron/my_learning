@@ -82,4 +82,4 @@ print(type(b))
 
 
 # call the help topic
-help(str)
+# help(str)

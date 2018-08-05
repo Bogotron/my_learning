@@ -22,7 +22,7 @@ def has_33(numlist):
 
 print(has_33([0, 3, 3, 4, 5 , 3]))
 
-'''
+
 
 def summer_69(arr):
     total = 0
@@ -43,3 +43,7 @@ def summer_69(arr):
     return total
 
 print(summer_69(2, 8, 6, 8, 9, 3))
+'''
+
+
+print(6 % 2)

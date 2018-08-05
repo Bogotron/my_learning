@@ -188,3 +188,77 @@ def summer_69(*args):
 
 print('Summer 69 func')
 print (summer_69(4, 5, 6, 7, 8, 9))
+
+
+# SPY GAME: Write a function that takes in a list of integers and returns True if it contains 007 in order
+
+def spy_game(*args):
+    spy_numbers = []
+    while spy_numbers != [0, 0, 7]:
+        for val in args:
+            if val == 0 or val == 7:
+                spy_numbers.append(val)
+        break
+    return spy_numbers == [0, 0, 7]
+
+
+def spy_game_alter(nums):
+    code = [0, 0, 7, 'x'] # 'x' нужен для того чтоб не обнулять список, и получить в итоге резултьтат
+    for num in nums:
+        if num == code[0]:
+            code.pop(0)  # code.remove(num) also works - достаёт из списка 'code' элементы пока не удалит 007
+
+    return len(code) == 1 # если длинна списка равняется 1 то значит 007 было извлечено и рез-т достигнут
+
+
+print('Spy numbers:')
+print(spy_game(1,2,4,0,0,7,5))
+print(spy_game(1,0,2,4,0,5,7))
+print(spy_game(1,7,2,0,4,5,0))
+
+
+# COUNT PRIMES: Write a function that returns the number of prime numbers that exist up to and including a given number
+# By convention, 0 and 1 are not prime.
+# Решение честно стырено
+def count_primes(num):
+    primes = [2]
+    x = 3
+    if num < 2:  # for the case of num = 0 or 1
+        return 0
+    while x <= num:
+        for y in range(3,x,2):  # test all odd factors up to x-1
+            if x%y == 0:
+                x += 2
+                break
+        else:
+            primes.append(x)
+            x += 2
+    print(primes)
+    return len(primes)
+
+# Тоже стыренное решение
+
+def count_primes2(num):
+    primes = [2]
+    x = 3
+    if num < 2:
+        return 0
+    while x <= num:
+        for y in primes:  # use the primes list!
+            if x%y == 0:
+                x += 2
+                break
+        else:
+            primes.append(x)
+            x += 2
+    print(primes)
+    return len(primes)
+
+
+def print_big(letter):
+    patterns = {1:'  *  ',2:' * * ',3:'*   *',4:'*****',5:'**** ',6:'   * ',7:' *   ',8:'*   * ',9:'*    '}
+    alphabet = {'A':[1,2,4,3,3],'B':[5,3,5,3,5],'C':[4,9,9,9,4],'D':[5,3,3,3,5],'E':[4,9,4,9,4]}
+    for pattern in alphabet[letter.upper()]:
+        print(patterns[pattern])
+
+print_big('a')
