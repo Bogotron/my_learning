@@ -5,17 +5,17 @@ def morze(word):
     alphabet = []
     morze_alphabet = ['*-', '-***', '-*-*', '-**', '*', '**-*', '--*', '****', '**', '*---', '-*-', '*-**', '--',
                       '-*', '---', '*--*', '--*-', '*-*', '***', '-', '**-', '***-', '*--', '-**-', '-*--', '--**']
-    return_phrase = []
     for letter in string.ascii_uppercase:
         alphabet.append(letter)
     morze_dict = dict(zip(alphabet, morze_alphabet))
+    print(morze_dict)
 
-    key_values = []
-    for letter in word.upper():
-        key_values.append(letter)
+    code_phrase = []
+    for letter in word:
+        code_phrase.append(letter.upper())
+    print(code_phrase)
+    print(return_phrase)
 
-    print(key_values)
-    for key in key_values:
-        
-
+    return_phrase = []
+    
 morze('hello')
