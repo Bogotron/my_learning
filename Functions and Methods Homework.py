@@ -11,7 +11,7 @@ print(vol(2))
 # Write a function that checks whether a number is in a given range (inclusive of high and low)
 
 def ran_check(num,low,high):
-    if num in range(low, high):
+    if num in range(low, high+1):
         print(f'The num {num} is in range {low} and {high}')
     else:
         print(f'The num {num} is not in range {low} and {high}')
@@ -20,7 +20,7 @@ ran_check(7, 1, 10)
 ran_check(12, 1, 10)
 
 def ran_bool(num,low,high):
-    return num in range(low, high)
+    return num in range(low, high+1)
 
 print(ran_bool(7, 1, 10))
 print(ran_bool(17, 1, 10))
@@ -87,6 +87,15 @@ def ispangram(str):
         return False
     pass
 
-print('\n')
+print('\nPan:')
 print(ispangram('What are you looking for?'))
 print(ispangram("The quick brown fox jumps over the lazy dog"))
+
+
+def ispangram_1(str):
+    alphabet = string.ascii_lowercase
+    return set(str.lower()) >= set(alphabet)
+
+print('\nPan 1:')
+print(ispangram_1('What are you looking for?'))
+print(ispangram_1("The quick brown fox jumps over the lazy dog"))
