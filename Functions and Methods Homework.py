@@ -55,3 +55,38 @@ print('\n')
 print(unique_list([1,1,1,1,2,2,3,3,3,3,4,5]))
 
 #Write a Python function to multiply all the numbers in a list.
+
+def multiply(nums):
+    mnum = 1
+    for num in nums:
+        mnum *= num
+    return mnum
+
+
+print('\n')
+print(multiply([1,2,3,-4]))
+
+
+def palindrome(s):
+    return s[0:] == s[::-1]
+
+print(palindrome('helleh'))
+
+teststr = 'hello world'
+teststr.lower()
+
+def ispangram(str):
+    alphabet = string.ascii_lowercase
+    alphabet_count = 0
+    for letter in alphabet:
+        if letter in str.lower():
+            alphabet_count += 1
+    if alphabet_count == len(alphabet):
+        return True
+    else:
+        return False
+    pass
+
+print('\n')
+print(ispangram('What are you looking for?'))
+print(ispangram("The quick brown fox jumps over the lazy dog"))
