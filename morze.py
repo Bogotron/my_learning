@@ -16,12 +16,10 @@ def morze_word(word):
             code_phrase.append(morze_dict[key])
         else:
             break
-    print(code_phrase)
+    return code_phrase
 
-def morze_phrase(*args):
-    morze_list = list(map(morze_word, args))
+def morze_phrase(phrase):
+    morze_list = list(map(morze_word, phrase.split()))
     return morze_list
 
-morze_phrase('Hello', 'world')
-
-'Надо добавить обработку пробела для функции morze_word'
+print(morze_phrase('Hello world'))
