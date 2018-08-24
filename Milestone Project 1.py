@@ -3,6 +3,17 @@
 #import clear display function
 
 # Player choice
+def welcome():
+    while True:
+        welcome_str = input('Are you ready to play? Yes or No? ')
+        if welcome_str.lower() == 'yes':
+            break
+        elif welcome_str.lower() == 'no':
+            print('Bye bye :)')
+            break
+        else:
+            print('Please enter "yes" or "no"')
+
 def player_choice():
     while True:
         player_1 = input('Please enter "X" or "O" to choice your side [type "Q" to exit]: ')
@@ -15,12 +26,22 @@ def player_choice():
 
 # Board display function
 def display_board():
-   string_1 = {'S1_С1':'_', 'S1_С2':'_', 'S1_С3':'_'}
-   string_2 = {'S2_С1':'_', 'S2_С2':'_', 'S2_С3':'_'}
-   string_3 = {'S3_С1':'_', 'S3_С2':'_', 'S3_С3':'_'}
+    board_line1 = '    |      |     '
+    board_line2 = '    |      |     '
+    board_line3 = '    |      |     '
+    board_line_bottom = '-----------------'
+    board_raer = '    |      |     '
 
-   print(string_1.values())
-   print(string_2.values())
-   print(string_3.values())
+    print(board_raer)
+    print(board_line1)
+    print(board_raer)
+    print(board_line_bottom)
+    print(board_raer)
+    print(board_line2)
+    print(board_raer)
+    print(board_line_bottom)
+    print(board_raer)
+    print(board_line3)
+    print(board_raer)
 
 display_board()
