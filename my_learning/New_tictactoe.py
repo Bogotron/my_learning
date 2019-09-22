@@ -1,5 +1,5 @@
 field = [" ", " ", " ", " ", " ", " ", " ", " ", " ",]
-turn_number = 1
+turn_number = 0
 win = False
 
 def start_game():
@@ -28,31 +28,41 @@ def turn(field, marker, turn_number):
         while field_cell not in range(0,9,1):
             field_cell = int(input('Enter your field position 1-9: ')) - 1
             field[field_cell] = marker[turn_number%2]
+    
 
-def victory_check(field, marker):
-    return (marker in (field[0] and field[1] and field [2]) or 
-            marker in (field[3] and field[4] and field [5]) or
-            marker in (field[6] and field[7] and field [8]) or 
-            marker in (field[0] and field[3] and field [6]) or
-            marker in (field[1] and field[4] and field [7]) or
-            marker in (field[2] and field[5] and field [8]) or
-            marker in (field[0] and field[4] and field [8]) or
-            marker in (field[2] and field[4] and field [6])
-            )
+def victory_check(field, marker, turn_number):
+    side = marker[turn_number%2]
+    return ((side == field[0] == field[1] == field [2]) or 
+            (side == field[3] == field[4] == field [5]) or
+            (side == field[6] == field[7] == field [8]) or
+            (side == field[0] == field[3] == field [6]) or
+            (side == field[1] == field[4] == field [7]) or
+            (side == field[2] == field[5] == field [8]) or
+            (side == field[0] == field[4] == field [8]) or
+            (side == field[6] == field[4] == field [2]))
 
+def field_printer(field):
+    print("\n")
+    print(field[6], field[7], field[8], sep= "|")
+    print("_____")
+    print(field[3], field[4], field[5], sep= "|")
+    print("_____")
+    print(field[0], field[1], field[2], sep= "|")
 
-while turn_number != 10 or win == True:
-    turn(field, ("O", "X"), turn_number)
-    if victory_check(field, 'X') == True:
-        win = True
-        print('X IS WINNER!!!')
-        break
-    print(field)
-    print(turn_number)
-    print(win)
-    turn_number += 1
 
 #MAIN GAME
+
+while True:
+    if start_game() == True:
+        player = side_choice()
+        while victory_check(field, player, turn_number) != True and turn_number < 10:
+            turn(field, player, turn_number)
+            field_printer(field)
+            turn_number += 1
+    else:
+        break
+    break
+
 
 '''
 def turn(player_choise):
